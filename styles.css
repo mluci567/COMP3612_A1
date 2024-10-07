@@ -1,0 +1,168 @@
+/*      COMP 3612 Assignment 1
+     Author: Marusia Luciuk (201437567) 
+     References: Connolly, R. Hoar, R (2020). Fundamental of Web Development. 3rd Edition. Pearson 
+                 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+                 https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/
+                 https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+                 https://developer.mozilla.org/en-US/docs/Web/CSS/float 
+                 https://www.w3schools.com/css/css_align.asp
+                 
+     Note: There are lots of descriptive comments here for learning purposes and so I wouldn't forget 
+           why I did something or how it works while working on this project */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.main {
+    padding: 65px;
+    padding-left: 100px;
+    color: white;
+    text-align: left;
+}
+
+/* styles for "Learn More" button */
+.main a { 
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #51279b;
+    color: white;
+    border-radius: 5px;
+}
+
+header {
+    background-image: url("images/florence.jpg");
+    background-size: cover; /*controls how a background image is sized and scaled to fit within its container,
+                              cover value tells the image to scale as large as possible while ensuring it 
+                              completely covers the container area*/
+    width: 100%;
+    min-height: 500px; /* adjusted for home page */
+}
+
+h1 {
+    font-size: 48px;
+}
+
+nav {
+    background-image: url("images/logo.png");
+    background-size: 60px;
+    background-repeat: no-repeat;
+    height: 60px;
+    padding-left: 100px;
+    padding-top: 22px;
+    word-spacing: 40px; 
+    color: #51279b;
+}
+
+/* link styles */
+a {
+    text-decoration: none;
+    color: #51279b; 
+}
+
+a:hover {
+    color: #8662c7;
+}
+
+.card {
+   /* border: 1px solid #ccc;*/
+    padding: 20px;
+   /* border-radius: 5px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    justify-content: space-between; 
+    width: 100%; 
+    display: flex; 
+    flex: 1 0 300px;
+    /*grow: determines how much the flex item will grow relative to other flex items in
+            the same container (if there's extra space available). 1 means it will grow 
+            to fill the available space. 
+      shrink: determines how much the flex item will shrink relative to other flex items
+            if there's not enough space. 0 means it will not shrink below its initial size.
+      basis: sets the initial main size of the flex item. */
+    flex-direction: column; /*determines the direction in which the flex items are laid out */
+    transition: transform 0.3s ease; /* transition for smooooth effect */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* move card slightly upwards on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.cards {
+    display: flex;
+    justify-content: center; /* determines how the browser distributes space along the main axis of the container 
+                                if flex-direction is row (default), the main axis is horizontal (left to right).
+                                if flex-direction is column, the main axis is vertical (top to bottom).
+*/
+    flex-wrap: wrap; /*defines whether the flex items should wrap or not, 
+                       value allows the flex items to wrap onto multiple 
+                       lines if the container is too narrow to fit them 
+                       all on one line */
+    gap: 20px; /*  controls the spacing between elements in a flexbox or grid layout. 
+                   sets both row-gap and column-gap to the same value. (adds 20 pixels 
+                   of space between each image, both vertically and horizontally)*/
+
+    padding: 20px;
+    width: 100%;
+    flex-grow: 1; 
+    /*the higher the flex-grow value, the more the item will grow relative to other 
+      flex items in the same container while there's extra space available
+      0- item will not grow to fill available space (maintains initial size defined
+         by flex-basis or content)
+      1- item will grow to fill available space. if there are multiple items with 
+         flex-grow: 1, they will share the available space equally.
+      2- item will grow twice as much as items with flex-grow: 1 to fill available space.*/
+}
+
+.card-footer {  /* class for the icon container */
+    display: flex;           
+    justify-content: center; /* center horizontally */
+    align-items: center;     /* center vertically */
+}
+
+.icon { 
+    width: 20px; 
+    height: auto; 
+    fill: #51279b; /* set the fill color to purple.. why wont this work??*/
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card p { 
+    display: inline-block; /*makes the element behave like a word in a sentence (inline), 
+                            but with the ability to have its own dimensions and spacing 
+                            like a paragraph (block)*/
+    margin: 5px; 
+    padding: 0;
+}
+
+.card p img {
+    vertical-align: middle;
+    margin-right: 5px; 
+}
+
+footer {
+    background-color: rgb(184, 182, 186);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer li {
+    display: inline; /* list item styles to display inline and add spacing */
+    margin: 0 10px;
+}
+
+footer ul {
+    list-style: none; /* unordered list styles to remove bullet points */
+    padding: 0; 
+    margin: 0;
+}

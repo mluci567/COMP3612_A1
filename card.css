@@ -1,0 +1,120 @@
+/*      COMP 3612 Assignment 1
+     Author: Marusia Luciuk (201437567) 
+     References: Connolly, R. Hoar, R (2020). Fundamental of Web Development. 3rd Edition. Pearson 
+                 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+                 https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/
+                 https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+                 https://developer.mozilla.org/en-US/docs/Web/CSS/float 
+                 https://www.w3schools.com/css/css_align.asp
+                 
+     Note: There are lots of descriptive comments here for learning purposes and so I wouldn't forget 
+           why I did something or how it works while working on this project */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    background-image: url("images/florence.jpg");
+    background-size: cover; /*controls how a background image is sized and scaled to fit within its container,
+                              cover value tells the image to scale as large as possible while ensuring it 
+                              completely covers the container area*/
+    width: 100%;
+    min-height: 100px; /* reduce header height for individual pages to give more focus to content*/
+
+}
+
+nav {
+    background-image: url("images/logo.png");
+    background-size: 60px;
+    background-repeat: no-repeat;
+    height: 60px;
+    padding-left: 65px;
+    padding-top: 22px;
+    word-spacing: 20px;
+    color: #51279b;
+}
+
+a {
+    text-decoration: none; /*remove or modify the default decorations applied to text, 
+                             (the underline that appears on hyperlink / <a> elements) */
+    color: #51279b;
+}
+
+a:hover {
+    color: #8662c7;
+}
+
+main {
+    padding: 20px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* row (default): flex items are placed in a horizontal row, from left to right
+       row-reverse: flex items are placed in a horizontal row, but in reverse order, from right to left
+       column: flex items are stacked vertically, from top to bottom
+       column-reverse: flex items are stacked vertically, but in reverse order, from bottom to top */
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+figure {
+    margin: 40; 
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    align-items: left;
+    text-align: left;
+}
+
+footer {
+    background-color: rgb(184, 182, 186);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-footer {
+    margin-left: 40px;
+}
+
+/* list item styles within the footer to display inline and add spacing */
+footer li {
+    display: inline;
+    margin: 0 10px;
+}
+
+/* unordered list styles to remove bullet points */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.icon {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 20px;
+  }
+
+.related-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%; 
+}
+
+.related-images img {
+    width: calc(100% / 3 - 10px); /* calculate width to fill space with nice gaps */
+    height: auto;
+}
+
+
+
+  
